@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="1096223421042-sjurteblap3ddgegnqigre26db0jsito.apps.googleusercontent.com">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="static/popup.js" ></script>
+<title>rabahrabah</title>
+
+</head>
+<body>
+    <div class="header">
+    <div class="contianer">
+        <div class="navbar">
+            
+              
+              <div class="logo"> 
+                  <!--this commented section will be for the logo when it's ready -->
+                  <!--<img src="static/images/logo.png" alt="logo" width="125px">-->
+                  <h1>RABAH & RABAH</h1>
+                   
+                </div>
+          
+               <nav>
+          
+                  <ul>
+                      <li><a href="">Home</a></li>
+                      <li><a href="">Services</a></li>
+                      <li><a href="">Contact us</a></li>
+                      <li id="myaccount"><a href="#">My Account</a></li>
+                  </ul>
+               </nav>
+              </div>
+        <div class="row">
+            
+           <div class="col-2">
+
+            <h1>Get Any Service You Want <br> With One Click !</h1>
+            <p> our mission is to make our life easier ,
+                <br>sed do eiusmod tempor incididunt tempor</p>
+                <a  id="btn" class="btn" href="#">Get Started &#8594;</a>
+           </div>
+           <div class="col-2">
+           <img src="static/images/workers.jpeg" alt="workersback">
+           
+          </div>
+
+        </div>
+    </div>
+</div>
+
+<!----Workers-->
+<div class="small-contianer">
+    <h2 class="title">Most Recent</h2>
+<div class="row">
+  <div class="col-4">
+   <img src="static/images/profile.png">
+   <h4>Electricien Batiment</h4>
+   <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-o"></i>
+   </div>
+   <p>Wilaya: Chlef</p>
+   <p>Contact: 0796526727</p>
+  </div>
+
+  <div class="col-4">
+    <img src="static/images/profile.png">
+    <h4>menuiserie aluminium</h4>
+    <div class="rating">
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star-half-o"></i>
+    </div>
+    <p>Wilaya: Djalfa</p>
+    <p>Contact: 0795526727</p>
+   </div>
+
+   <div class="col-4">
+    <img src="static/images/profile.png">
+    <h4>Painter</h4>
+    <div class="rating">
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star-o"></i>
+    </div>
+    <p>Wilaya: tessemsilt</p>
+    <p>Contact: 079614727</p>
+   </div>
+
+   <div class="col-4">
+    <img src="static/images/profile.png">
+    <h4>Plombrie</h4>
+    <div class="rating">
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star-half-o"></i>
+    </div>
+    <p>Wilaya: Oran</p>
+    <p>Contact: 079646727</p>
+   </div>
+
+
+</div>
+
+</div>
+<div class="bg-modal">
+  <div  class="modal-content">
+      <div id="my-signin2">
+      </div>
+  </div>
+  </div>
+    
+</body>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+</script>
+<script>
+  
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+      //document.getElementById('btn').style.display = 'none';
+      $('#btn').attr('style','display:none');
+      document.getElementById('myaccount').style.display = 'inline-block';
+     // $('#myaccount').attr('style','content : test')
+     // document.getElementById('myaccount').textContent = googleUser.getBasicProfile().getName();
+
+    }
+    function onFailure(error) {
+      
+      console.log(error);
+    }
+    function renderButton() {
+    gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    
+    $('#my-signin2').attr('style','margin-left : 15px; margin-top : 16px;')
+    }
+  
+      document.getElementById('btn').addEventListener('click',function(){
+      document.querySelector('.bg-modal').style.display = 'flex';
+    });
+
+     document.getElementById('myaccount').style.display = 'none';
+        
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+
+
+
+</html>
